@@ -42,7 +42,7 @@ MINI_ACE = 1
 #Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
 #11 is the Ace.
 def deal_card():
-    index = random.randint(0,len(CARDS))
+    index = random.randint(0,len(CARDS)-1)
     return CARDS[index]
 
 
@@ -73,12 +73,13 @@ def update_hand_over_21_if_ace_exist(hand):
 #and returns the score. 
 #Look up the sum() function to help you do this.
 def calculate_score(hand):
+    """
+        take a list of cards and return score :  0 means blackjack(21)
+    """
     size = len(hand)
     total = sum(hand)
     result = 0 if check_for_blackjack(size, total) else total
     return result
-
-
 
 
 #Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
@@ -92,21 +93,60 @@ def call_for_round_end(user_cards, computer_cards):
 
 
 #Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
+def get_choice_from_user():
+    print('press D or d to draw card, else press enter\n')
+    choice = input()
+    if choice == 'D' or choice == 'd':
+        return 'draw'
+    else:
+        return 'stop'
 
 
 #Hint 11: The score will need to be rechecked with every new card drawn and the checks in Hint 9 need to be repeated until the game ends.
+def deal_card_for_user(user_hand):
+    print(user_hand)
+    choice = get_choice_from_user()
+    score = calculate_score(user_hand)
+    while choice == 'draw' and  (score < BLACKJACK or score == 0):
+        user_hand.append(deal_card())
+        score = calculate_score(user_hand)
+        print(user_hand)
+        choice = get_choice_from_user()
+        
+    
+    return user_hand, score
 
 #Hint 12: Once the user is done, it's time to let the computer play. The computer should keep drawing cards as long as it has a score less than 17.
+def deal_cards_for_comp(comp_hand):
+    print(comp_hand)
+    score = calculate_score(comp_hand)
+    while score < 17 and score != 0:
+        comp_hand.append(deal_card())
+        comp_hand = update_hand_over_21_if_ace_exist(comp_hand)
+        score = calculate_score(comp_hand)
+        print(comp_hand)
+    
+    return comp_hand, score
+
+# my end round function
+def play_round():
+    user_hand = deal_first_cards()
+    computer_hand = deal_first_cards()
+    user_cards, user_score = deal_card_for_user(user_hand)
+    comp_cards, comp_score = deal_cards_for_comp(computer_hand)
+    return {'user': (user_cards, user_score), 'comp': (comp_cards, comp_score)}
+
 
 #Hint 13: Create a function called compare() and pass in the user_score and computer_score. If the computer and user both have the same score, then it's a draw. If the computer has a blackjack (0), then the user loses. If the user has a blackjack (0), then the user wins. If the user_score is over 21, then the user loses. If the computer_score is over 21, then the computer loses. If none of the above, then the player with the highest score wins.
 
 #Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
 
 def main():
-    user_cards = deal_first_cards()
-    computer_cards = deal_first_cards()
-    print(f"user card is {user_cards}, with score of {calculate_score(user_cards)}")
-    print(f"computer cards is {computer_cards}, with score of {calculate_score(computer_cards)}")
+    round = play_round()
+    user_cards, user_score = round['user']
+    comp_cards, comp_score = round['comp']
+    print(f"user card is {user_cards}, with score of {user_score}")
+    print(f"computer cards is {comp_cards}, with score{comp_score}")
 
 
 if __name__ == "__main__":
