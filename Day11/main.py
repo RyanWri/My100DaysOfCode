@@ -82,16 +82,6 @@ def calculate_score(hand):
     return result
 
 
-#Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
-def call_for_round_end(user_cards, computer_cards):
-    user_score, comp_score = calculate_score(user_cards), calculate_score(computer_cards)
-    is_round_over = False
-    if user_score == 0 or comp_score == 0 or user_score > BLACKJACK:
-        is_round_over = True
-    
-    return is_round_over
-
-
 #Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
 def get_choice_from_user():
     print('press D or d to draw card, else press enter\n')
@@ -103,12 +93,14 @@ def get_choice_from_user():
 
 
 #Hint 11: The score will need to be rechecked with every new card drawn and the checks in Hint 9 need to be repeated until the game ends.
-def deal_card_for_user(user_hand):
+def deal_cards_for_user():
+    user_hand = deal_first_cards()
     print(user_hand)
     choice = get_choice_from_user()
     score = calculate_score(user_hand)
     while choice == 'draw' and  (score < BLACKJACK or score == 0):
         user_hand.append(deal_card())
+        user_hand = update_hand_over_21_if_ace_exist(user_hand)
         score = calculate_score(user_hand)
         print(user_hand)
         choice = get_choice_from_user()
@@ -117,7 +109,8 @@ def deal_card_for_user(user_hand):
     return user_hand, score
 
 #Hint 12: Once the user is done, it's time to let the computer play. The computer should keep drawing cards as long as it has a score less than 17.
-def deal_cards_for_comp(comp_hand):
+def deal_cards_for_comp():
+    comp_hand = deal_first_cards()
     print(comp_hand)
     score = calculate_score(comp_hand)
     while score < 17 and score != 0:
@@ -128,26 +121,39 @@ def deal_cards_for_comp(comp_hand):
     
     return comp_hand, score
 
-# my end round function
-def play_round():
-    user_hand = deal_first_cards()
-    computer_hand = deal_first_cards()
-    user_cards, user_score = deal_card_for_user(user_hand)
-    comp_cards, comp_score = deal_cards_for_comp(computer_hand)
-    return {'user': (user_cards, user_score), 'comp': (comp_cards, comp_score)}
+def check_result(score, player="user"):
+    if score == 0:
+        return f"{player} won with blackjack"
+    else:
+        return f"{player} lost due to passing 21"
+    
 
+def compare_result(user_score, comp_score):
+    if user_score > comp_score:
+        return f"User won {user_score} > Computer lost{comp_score}"
+    else:
+        return f"Computer won {comp_score} >= User lost{user_score}"
+
+#Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
+def play_round():
+    user_hand, user_score = deal_cards_for_user()
+    if user_score == 0 or user_score > BLACKJACK:
+        return check_result(user_score)
+
+    comp_hand, comp_score = deal_cards_for_comp()
+    if comp_score == 0 or comp_score > BLACKJACK:
+        return check_result(comp_score, player='computer')
+    
+    return compare_result(user_score, comp_score)
+    
 
 #Hint 13: Create a function called compare() and pass in the user_score and computer_score. If the computer and user both have the same score, then it's a draw. If the computer has a blackjack (0), then the user loses. If the user has a blackjack (0), then the user wins. If the user_score is over 21, then the user loses. If the computer_score is over 21, then the computer loses. If none of the above, then the player with the highest score wins.
 
 #Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
 
 def main():
-    round = play_round()
-    user_cards, user_score = round['user']
-    comp_cards, comp_score = round['comp']
-    print(f"user card is {user_cards}, with score of {user_score}")
-    print(f"computer cards is {comp_cards}, with score{comp_score}")
-
+    result = play_round()
+    print(result)
 
 if __name__ == "__main__":
     main()
