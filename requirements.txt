@@ -2,3 +2,8 @@ requests
 pyclean
 autopep8
 python-dotenv
+pandas
+numpy
+plotly
+seaborn
+matplotlib
