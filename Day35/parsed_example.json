@@ -1,0 +1,244 @@
+{
+  "result": [
+    {
+      "ts": "2023-08-21T12:00:00",
+      "weather": "Clouds",
+      "description": "few clouds",
+      "weather_id": 801
+    },
+    {
+      "ts": "2023-08-21T15:00:00",
+      "weather": "Clouds",
+      "description": "few clouds",
+      "weather_id": 801
+    },
+    {
+      "ts": "2023-08-21T18:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-21T21:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-22T00:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-22T03:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-22T06:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-22T09:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-22T12:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-22T15:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-22T18:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-22T21:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-23T00:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-23T03:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-23T06:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-23T09:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-23T12:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-23T15:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-23T18:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-23T21:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-24T00:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-24T03:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-24T06:00:00",
+      "weather": "Clouds",
+      "description": "scattered clouds",
+      "weather_id": 802
+    },
+    {
+      "ts": "2023-08-24T09:00:00",
+      "weather": "Clouds",
+      "description": "scattered clouds",
+      "weather_id": 802
+    },
+    {
+      "ts": "2023-08-24T12:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-24T15:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-24T18:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-24T21:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-25T00:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-25T03:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-25T06:00:00",
+      "weather": "Clouds",
+      "description": "few clouds",
+      "weather_id": 801
+    },
+    {
+      "ts": "2023-08-25T09:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-25T12:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-25T15:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-25T18:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-25T21:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-26T00:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-26T03:00:00",
+      "weather": "Clear",
+      "description": "clear sky",
+      "weather_id": 800
+    },
+    {
+      "ts": "2023-08-26T06:00:00",
+      "weather": "Clouds",
+      "description": "scattered clouds",
+      "weather_id": 802
+    },
+    {
+      "ts": "2023-08-26T09:00:00",
+      "weather": "Clouds",
+      "description": "broken clouds",
+      "weather_id": 803
+    }
+  ]
+}
